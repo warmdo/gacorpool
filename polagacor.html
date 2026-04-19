@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Generator Pola Gacor PRO</title>
+<title>Generator Pola Gacor</title>
 
 <style>
 body {
@@ -28,7 +28,7 @@ h1 {
     color: #f97316;
 }
 
-select, input {
+select {
     width: 100%;
     padding: 10px;
     margin-top: 8px;
@@ -65,16 +65,16 @@ button {
 
 <div class="container">
 
-<h1>🔥 GENERATOR POLA GACOR WEB DEPAN 🔥</h1>
+<h1>🔥 GENERATOR POLA GACOR WEB DEPAN🔥</h1>
 
 <div class="card">
 
 <label>Pilih Situs:</label>
 <select id="situs">
-    <option>edan777</option>
-    <option>republik62</option>
-    <option>istana62</option>
-    <option>warga62</option>
+    <option>Edan777</option>
+    <option>Republik62</option>
+    <option>Istana62</option>
+    <option>Warga62</option>
 </select>
 
 <label>Provider:</label>
@@ -85,9 +85,6 @@ button {
 
 <label>Game:</label>
 <select id="game"></select>
-
-<label>Jumlah Pola:</label>
-<input type="number" id="jumlah" value="1">
 
 <button onclick="generate()">Generate</button>
 <button onclick="copyHasil()">Copy</button>
@@ -111,25 +108,29 @@ const games = {
 const autoSpin = [10,30,50,80];
 
 // BET RANGE
-const betRange = ["400-800","600-1000","800-1200","1000-1400"];
+const betRange = ["400-800","600-1000","800-1200","1000-1400","1400-2000"];
 
-// LINK PER SITUS
+// LINK PER SITUS (DITAMBAH APK)
 const linkSitus = {
-    edan777: {
+    Edan777: {
         utama: "https://indocuan.link/e777/utama",
-        alternatif: "https://indocuan.link/e777/alt"
+        alternatif: "https://indocuan.link/e777/alt",
+        apk: "https://indocuan.link/e777/apkedan777"
     },
-    republik62: {
+    Republik62: {
         utama: "https://indocuan.link/R62/utama",
-        alternatif: "https://indocuan.link/R62/alt"
+        alternatif: "https://indocuan.link/R62/alt",
+        apk: "https://indocuan.link/R62/apkrepublik62"
     },
-    istana62: {
+    Istana62: {
         utama: "https://indocuan.link/IST62/utama",
-        alternatif: "https://indocuan.link/IST62/alt"
+        alternatif: "https://indocuan.link/IST62/alt",
+        apk: "https://indocuan.link/IST62/apkistana62"
     },
-    warga62: {
+    Warga62: {
         utama: "https://indocuan.link/W62/utama",
-        alternatif: "https://indocuan.link/W62/alt"
+        alternatif: "https://indocuan.link/W62/alt",
+        apk: "https://indocuan.link/W62/apkwarga62"
     }
 };
 
@@ -150,50 +151,48 @@ function rand(arr){
     return arr[Math.floor(Math.random()*arr.length)];
 }
 
-// GENERATE
+// GENERATE (1 POLA SAJA)
 function generate(){
 
     let situs = document.getElementById("situs").value;
     let game = document.getElementById("game").value;
-    let jumlah = document.getElementById("jumlah").value;
+
+    let spin = rand(autoSpin);
+    let fokusBet = rand(betRange);
+
+    let linkUtama = linkSitus[situs].utama;
+    let linkAlt = linkSitus[situs].alternatif;
+    let linkApk = linkSitus[situs].apk;
 
     let hasil = "";
 
-    for(let i=1;i<=jumlah;i++){
+    hasil += `Pola Gacor saat ini\n`;
+    hasil += `Terimakasih telah menghubungi ${situs} , senang bisa membantu kaka nya ^^\n\n`;
 
-        let spin = rand(autoSpin);
-        let fokusBet = rand(betRange);
+    hasil += `💯 POLA ${game.toUpperCase()} AUTO GACOR 💯\n`;
+    hasil += `Fokus di bettingan ${fokusBet}\n\n`;
 
-        let linkUtama = linkSitus[situs].utama;
-        let linkAlt = linkSitus[situs].alternatif;
+    hasil += `🎮 ${game} 🎮\n\n`;
 
-        hasil += `Pola Gacor saat ini\n`;
-        hasil += `Terimakasih telah menghubungi ${situs} , senang bisa membantu kaka nya ^^\n\n`;
+    hasil += `🔥 Step 1: Panaskan Mesin\n`;
+    hasil += `${Math.floor(Math.random()*10+15)}x Manual Spin\n\n`;
 
-        hasil += `💯 POLA ${game.toUpperCase()} AUTO GACOR 💯\n`;
-        hasil += `Fokus di bettingan ${fokusBet}\n\n`;
+    hasil += `⚡ Step 2: Pola Utama\n`;
+    hasil += `${spin}x Auto Turbo ON\n\n`;
 
-        hasil += `🎮 ${game} 🎮\n\n`;
+    hasil += `⛔ Step 3: Kontrol Spin\n`;
+    hasil += `${Math.floor(Math.random()*10+5)}x Manual Turbo ON\n\n`;
 
-        hasil += `🔥 Step 1: Panaskan Mesin\n`;
-        hasil += `${Math.floor(Math.random()*10+15)}x Manual Spin\n\n`;
+    hasil += `💥 Langkah Terakhir\n`;
+    hasil += `${Math.floor(Math.random()*20+10)}x Manual Turbo ON\n\n`;
 
-        hasil += `⚡ Step 2: Pola Utama\n`;
-        hasil += `${spin}x Auto Turbo ON\n\n`;
+    hasil += `MINIMAL DEPOSIT 50-250 rb BERKESEMPATAN JADI JUTAWAN\n\n`;
 
-        hasil += `⛔ Step 3: Kontrol Spin\n`;
-        hasil += `${Math.floor(Math.random()*10+5)}x Manual Turbo ON\n\n`;
+    hasil += `Link Utama : ${linkUtama}\n`;
+    hasil += `Link Alternatif : ${linkAlt}\n`;
+    hasil += `Link APK : ${linkApk}\n\n`;
 
-        hasil += `💥 Langkah Terakhir\n`;
-        hasil += `${Math.floor(Math.random()*20+10)}x Manual Turbo ON\n\n`;
-
-        hasil += `MINIMAL DEPOSIT 50-250 rb BERKESEMPATAN JADI JUTAWAN\n\n`;
-
-        hasil += `Link Utama : ${linkUtama}\n`;
-        hasil += `Link Alternatif : ${linkAlt}\n\n`;
-
-        hasil += `Selamat bermain dan semoga mendapatkan kemenangan nya ya kak ^^\n`;
-    }
+    hasil += `Selamat bermain dan semoga mendapatkan kemenangan nya ya kak ^^\n`;
 
     document.getElementById("hasil").innerText = hasil;
 }
