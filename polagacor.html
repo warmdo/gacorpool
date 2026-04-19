@@ -2,12 +2,13 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Generator Pola Gacor Online</title>
+<title>Generator Pola Gacor PRO</title>
 
 <style>
 body {
     font-family: Arial;
-    background: #f2f2f2;
+    background: #0f172a;
+    color: white;
 }
 
 .container {
@@ -15,34 +16,47 @@ body {
     margin: auto;
 }
 
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
 h1 {
     text-align: center;
-    color: #d35400;
+    color: #f97316;
 }
 
 select, input {
     width: 100%;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 8px;
+    background: #334155;
+    color: white;
+    border: none;
+    border-radius: 6px;
 }
 
 button {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
-    background: #d35400;
+    background: #f97316;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 6px;
 }
 
 #hasil {
     margin-top: 20px;
-    background: #eee;
-    padding: 10px;
-    height: 320px;
+    background: black;
+    padding: 15px;
+    height: 350px;
     overflow-y: scroll;
     white-space: pre-wrap;
+    border-radius: 10px;
 }
 </style>
 </head>
@@ -50,9 +64,12 @@ button {
 <body>
 
 <div class="container">
-<h1>Generator Pola Gacor Online</h1>
 
-<label>Pilih Nama Situs:</label>
+<h1>🔥 GENERATOR POLA GACOR WEB DEPAN 🔥</h1>
+
+<div class="card">
+
+<label>Pilih Situs:</label>
 <select id="situs">
     <option>edan777</option>
     <option>republik62</option>
@@ -60,51 +77,70 @@ button {
     <option>warga62</option>
 </select>
 
-<label>Pilih Provider:</label>
+<label>Provider:</label>
 <select id="provider" onchange="updateGame()">
     <option value="pgsoft">PGSOFT</option>
     <option value="pragmatic">PRAGMATIC</option>
 </select>
 
-<label>Pilih Game Cuy:</label>
+<label>Game:</label>
 <select id="game"></select>
 
-<label>Jumlah Pola yang Di-generate:</label>
+<label>Jumlah Pola:</label>
 <input type="number" id="jumlah" value="1">
 
-<button onclick="generate()">Generate Pola</button>
-<button onclick="download()">Download Hasil</button>
-<button onclick="copyHasil()">Copy Hasil</button>
+<button onclick="generate()">Generate</button>
+<button onclick="copyHasil()">Copy</button>
+<button onclick="download()">Download</button>
 
-<h2>Hasil Pola:</h2>
+</div>
+
 <div id="hasil"></div>
 
 </div>
 
 <script>
 
-// GAME LIST
+// GAME
 const games = {
-    pgsoft: ["Mahjong 1","Mahjong 2","Wild Bounty Shadow","Wild Bandito","Lucky Neko"],
-    pragmatic: ["Gate Olympus","Gate Olympus 1000","Mahjong 3","Bonanza 1000"]
+    pgsoft: ["Mahjong 1","Mahjong 2","Wild Bandito","Lucky Neko"],
+    pragmatic: ["Gate Olympus","Gate Olympus 1000","Sweet Bonanza"]
 };
 
 // AUTO SPIN
 const autoSpin = [10,30,50,80];
 
-// BET
-const betList = [400,600,800,1000,1200,1400,1600];
+// BET RANGE
+const betRange = ["400-800","600-1000","800-1200","1000-1400"];
+
+// LINK PER SITUS
+const linkSitus = {
+    edan777: {
+        utama: "https://indocuan.link/e777/utama",
+        alternatif: "https://indocuan.link/e777/alt"
+    },
+    republik62: {
+        utama: "https://indocuan.link/R62/utama",
+        alternatif: "https://indocuan.link/R62/alt"
+    },
+    istana62: {
+        utama: "https://indocuan.link/IST62/utama",
+        alternatif: "https://indocuan.link/IST62/alt"
+    },
+    warga62: {
+        utama: "https://indocuan.link/W62/utama",
+        alternatif: "https://indocuan.link/W62/alt"
+    }
+};
 
 // UPDATE GAME
 function updateGame(){
-    let p = document.getElementById("provider").value;
-    let g = document.getElementById("game");
-    g.innerHTML = "";
-
+    let p = provider.value;
+    game.innerHTML = "";
     games[p].forEach(x=>{
-        let opt = document.createElement("option");
-        opt.text = x;
-        g.add(opt);
+        let o = document.createElement("option");
+        o.text = x;
+        game.add(o);
     });
 }
 updateGame();
@@ -116,52 +152,48 @@ function rand(arr){
 
 // GENERATE
 function generate(){
+
     let situs = document.getElementById("situs").value;
-    let provider = document.getElementById("provider").value;
     let game = document.getElementById("game").value;
     let jumlah = document.getElementById("jumlah").value;
 
     let hasil = "";
 
-    for(let i=0;i<jumlah;i++){
+    for(let i=1;i<=jumlah;i++){
 
-        let b1 = rand(betList);
-        let b2 = rand(betList);
-        let b3 = rand(betList);
-        let b4 = rand(betList);
         let spin = rand(autoSpin);
+        let fokusBet = rand(betRange);
+
+        let linkUtama = linkSitus[situs].utama;
+        let linkAlt = linkSitus[situs].alternatif;
 
         hasil += `Pola Gacor saat ini\n`;
         hasil += `Terimakasih telah menghubungi ${situs} , senang bisa membantu kaka nya ^^\n\n`;
 
-        hasil += `💯 POLA ${game.toUpperCase()} AUTO GACOR 💯\n\n`;
+        hasil += `💯 POLA ${game.toUpperCase()} AUTO GACOR 💯\n`;
+        hasil += `Fokus di bettingan ${fokusBet}\n\n`;
 
         hasil += `🎮 ${game} 🎮\n\n`;
 
         hasil += `🔥 Step 1: Panaskan Mesin\n`;
-        hasil += `${Math.floor(Math.random()*15+15)}x Manual Spin (BET ${b1})\n\n`;
+        hasil += `${Math.floor(Math.random()*10+15)}x Manual Spin\n\n`;
 
         hasil += `⚡ Step 2: Pola Utama\n`;
-
-        if(provider==="pgsoft"){
-            hasil += `${spin}x Auto Turbo ON (BET ${b2})\n\n`;
-        } else {
-            hasil += `${spin}x Auto Spin Turbo ON (BET ${b2})\n\n`;
-        }
+        hasil += `${spin}x Auto Turbo ON\n\n`;
 
         hasil += `⛔ Step 3: Kontrol Spin\n`;
-
-        if(provider==="pgsoft"){
-            hasil += `${Math.floor(Math.random()*10+5)}x Manual Turbo ON (BET ${b3})\n\n`;
-        } else {
-            hasil += `${Math.floor(Math.random()*10+5)}x Manual Spin Cepat ON (BET ${b3})\n\n`;
-        }
+        hasil += `${Math.floor(Math.random()*10+5)}x Manual Turbo ON\n\n`;
 
         hasil += `💥 Langkah Terakhir\n`;
-        hasil += `${Math.floor(Math.random()*20+10)}x Manual Turbo ON (BET ${b4})\n\n`;
+        hasil += `${Math.floor(Math.random()*20+10)}x Manual Turbo ON\n\n`;
 
         hasil += `MINIMAL DEPOSIT 50-250 rb BERKESEMPATAN JADI JUTAWAN\n\n`;
+
+        hasil += `Link Utama : ${linkUtama}\n`;
+        hasil += `Link Alternatif : ${linkAlt}\n\n`;
+
         hasil += `Selamat bermain dan semoga mendapatkan kemenangan nya ya kak ^^\n`;
+        hasil += `----------------------------------------------------------------\n\n`;
     }
 
     document.getElementById("hasil").innerText = hasil;
@@ -169,18 +201,16 @@ function generate(){
 
 // COPY
 function copyHasil(){
-    let text = document.getElementById("hasil").innerText;
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(hasil.innerText);
     alert("Berhasil di copy!");
 }
 
 // DOWNLOAD
 function download(){
-    let text = document.getElementById("hasil").innerText;
-    let blob = new Blob([text], {type:"text/plain"});
+    let blob = new Blob([hasil.innerText], {type:"text/plain"});
     let a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "hasil_pola.txt";
+    a.download = "pola_gacor.txt";
     a.click();
 }
 
